@@ -47,3 +47,52 @@ nav ul li a {
   padding: 22px 14px;
   text-decoration: none
 }
+
+
+nav ul li a span {
+  font-family: verdana;
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  padding: 0px 8px;
+  text-decoration: none;
+  border: 2px solid #222;
+  transition: 0.4s linear;
+  background: #2c3e50;
+}
+
+nav ul li a span:hover {
+  color: #fff;
+  background: #222;
+  border: 2px solid #222;
+}
+
+nav ul li a:hover {
+  color: #222;
+  transition-delay: .25s linear;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li {
+  width: 180px;
+  border-radius: 4px;
+}
+
+nav ul li ul li a {
+  padding: 8px 14px;
+}
+
+nav ul li ul li a:hover {
+  background-color: #f3f3f3;
+}
