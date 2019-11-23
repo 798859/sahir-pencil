@@ -2,23 +2,129 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <title>Responsive Navbar using JQuery</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="icon" href="0A246093-1A1B-44DC-967C-67BD105A97A8.jpeg">
-    <title>Sahir's Pencils</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#icon').click(function(){
+          $('ul').toggleClass('active');
+        });
+      });
+    </script>
+
   </head>
   <body>
     <nav>
-      <p><a href="index.html">Sahir's Pencils</a></p>
+      <label class="logo">Sahir's Pencils</label>
       <ul>
-        <li><a href="index.html"><span>Home</span></a></li>
-        <li><a href="#">Pricings</a>
-            <ul>
-              <li><a href="#">Customize</a></li>
-              <li><a href="#">Pricings</a></li>
-            </ul>
-        </li>
+        <li><a class="active" href="#">Home</a></li>
         <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
+      <label id="icon"><i class="fas fa-bars"></i></label>
+    </nav>
+    <section></section>
   </body>
+
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+body{
+  font-family: montserrat;
+}
+nav{
+  height: 80px;
+  width: 100%;
+  background: #34495e;
+}
+label.logo{
+  font-size: 35px;
+  font-weight: bold;
+  padding: 0 100px;
+  line-height: 80px;
+  color: white;
+}
+nav ul{
+  float: right;
+  margin-right: 40px;
+}
+nav li{
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 80px;
+}
+nav a{
+  color: white;
+  font-size: 18px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+}
+
+nav #icon{
+  color: white;
+  font-size: 20px;
+  float: right;
+  margin-right: 40px;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 1048px){
+  label.logo{
+    font-size: 32px;
+    padding-left: 60px;
+  }
+  nav ul{
+    margin-right: 20px;
+  }
+  nav a{
+    font-size: 17px;
+  }
+}
+@media (max-width: 909px){
+  nav #icon{
+    display: block;
+  }
+  nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2f3640;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav a{
+    font-size: 20px;
+  }
+  a.active,a:hover{
+    border: none;
+    color: #3498db;
+  }
+  nav ul.active{
+    left: 0;
+  }
+}
+section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+</style>
+
+</html>
